@@ -6,8 +6,6 @@ from langgraph.graph import StateGraph, END, START
 from langchain_core.messages import HumanMessage, AIMessage, ToolMessage, BaseMessage
 from langgraph.types import Command
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from evaluate import load
-from datasets import load_dataset
 import torch
 
 key = "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"
@@ -17,47 +15,46 @@ if not os.environ.get("OPENAI_API_KEY"):
 
 planner = ChatOpenAI(model="gpt-4o")
 
-developer = "Qwen/Qwen2.5-Coder-0.5B"
-debugger = "Qwen/Qwen2.5-Coder-0.5B"
-explainer = "Qwen/Qwen2.5-Coder-0.5B"
+base_model = "Qwen/Qwen2.5-Coder-0.5B"
 
-token_hf = "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"
+developer = base_model
+debugger = base_model
+explainer = base_model
 
 developer_model = AutoModelForCausalLM.from_pretrained(
     developer,
-    # quantization_config=bnb_config,
     device_map="auto",
-    token = token_hf,
     torch_dtype=torch.float32,
 )
 
+developer_model.load_state_dict(torch.load("models/student_generator_model.pt"))
+
 developer_tokenizer = AutoTokenizer.from_pretrained(
     developer,
-    token = token_hf
 )
 
 debugger_model = AutoModelForCausalLM.from_pretrained(
     debugger,
     device_map="auto",
-    token = token_hf,
     torch_dtype=torch.float32,
 )
 
+debugger_model.load_state_dict(torch.load("models/student_debugger_model.pt"))
+
 debugger_tokenizer = AutoTokenizer.from_pretrained(
     debugger,
-    token = token_hf
 )
 
 explainer_model = AutoModelForCausalLM.from_pretrained(
     explainer,
     device_map="auto",
-    token = token_hf,
     torch_dtype=torch.float32,
 )
 
+explainer_model.load_state_dict(torch.load("models/student_debugger_model.pt"))
+
 explainer_tokenizer = AutoTokenizer.from_pretrained(
     explainer,
-    token = token_hf
 )
 
 class AgentState(TypedDict):
