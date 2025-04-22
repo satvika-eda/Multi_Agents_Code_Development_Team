@@ -20,6 +20,7 @@ base_model = "Qwen/Qwen2.5-Coder-0.5B"
 developer = base_model
 debugger = base_model
 explainer = base_model
+cot = base_model
 
 developer_model = AutoModelForCausalLM.from_pretrained(
     developer,
@@ -31,6 +32,18 @@ developer_model.load_state_dict(torch.load("models/student_generator_model.pt"))
 
 developer_tokenizer = AutoTokenizer.from_pretrained(
     developer,
+)
+
+cot_model = AutoModelForCausalLM.from_pretrained(
+    debugger,
+    device_map="auto",
+    torch_dtype=torch.float32,
+)
+
+cot_model.load_state_dict(torch.load("models/student_cot_model.pt"))
+
+cot_tokenizer = AutoTokenizer.from_pretrained(
+    cot,
 )
 
 debugger_model = AutoModelForCausalLM.from_pretrained(
@@ -50,8 +63,6 @@ explainer_model = AutoModelForCausalLM.from_pretrained(
     device_map="auto",
     torch_dtype=torch.float32,
 )
-
-explainer_model.load_state_dict(torch.load("models/student_debugger_model.pt"))
 
 explainer_tokenizer = AutoTokenizer.from_pretrained(
     explainer,
