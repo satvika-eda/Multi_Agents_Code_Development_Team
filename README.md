@@ -48,13 +48,11 @@ To improve agent performance, the system uses **Reinforcement Learning with Huma
 5 directories, 35 files
 ```
 ## File Descriptions
-```
 | File      | Description                                                               |
 | --------- | ------------------------------------------------------------------------- |
 | app.py    | Scalar feedback UI via Streamlit                                          |
 | app_ab.py | Preference based feedback UI via Streamlit                                |
 | graph.py  | Implements planner logic for routing prompts and responses between agents |
-```
 
 ## /RLHF
 | File                                | Description                                                         |
