@@ -10,6 +10,7 @@ To improve agent performance, the system uses **Reinforcement Learning with Huma
 ---
 
 ## Project Structure
+```
 .
 ├── CodeCraftModels.ipynb
 ├── README.md
@@ -52,3 +53,11 @@ To improve agent performance, the system uses **Reinforcement Learning with Huma
 └── structure.txt
 
 5 directories, 35 files
+```
+## File Descriptions
+File/Folder | Description
+app.py | Launches the Streamlit feedback interface for scalar feedback.
+app_ab.py | Launches the Streamlit UI for preference-based feedback between models.
+graph.py | Manages the planner agent and the data flow between specialized agents.
+CodeCraftModels.ipynb | Notebook that documents and demonstrates how the multi-agent models work together.
+README.md | Project overview, setup instructions, and documentation.
