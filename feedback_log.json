@@ -1,0 +1,128 @@
+{
+  "1744731620": {
+    "feedback": {
+      "1": "positive"
+    },
+    "messages": [
+      {
+        "role": "human",
+        "content": "Hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! How can I assist you today?"
+      }
+    ]
+  },
+  "1744731625": {
+    "feedback": {
+      "1": "positive",
+      "3": "positive"
+    },
+    "messages": [
+      {
+        "role": "human",
+        "content": "Hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! How can I assist you today?"
+      },
+      {
+        "role": "human",
+        "content": "ssup"
+      },
+      {
+        "role": "ai",
+        "content": "Hey! How's it going?"
+      }
+    ]
+  },
+  "1744731735": {
+    "feedback": {
+      "1": "positive",
+      "3": "positive",
+      "5": "positive"
+    },
+    "messages": [
+      {
+        "role": "human",
+        "content": "Hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! How can I assist you today?"
+      },
+      {
+        "role": "human",
+        "content": "ssup"
+      },
+      {
+        "role": "ai",
+        "content": "Hey! How's it going?"
+      },
+      {
+        "role": "human",
+        "content": "give code for even number detection in python"
+      },
+      {
+        "role": "ai",
+        "content": "Certainly! You can detect if a number is even in Python using a simple function. Here's some code to do that:\n\n```python\ndef is_even(number):\n    \"\"\"Check if a number is even.\"\"\"\n    return number % 2 == 0\n\n# Example usage:\nnumber = 10\nif is_even(number):\n    print(f\"{number} is even.\")\nelse:\n    print(f\"{number} is odd.\")\n```\n\nIn this code, the `is_even` function checks if the remainder when `number` is divided by 2 is zero. If so, the number is even; otherwise, it is odd."
+      }
+    ]
+  },
+  "1744733170": {
+    "feedback": {
+      "1": "positive"
+    },
+    "messages": [
+      {
+        "role": "human",
+        "content": "Hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! How can I assist you today?"
+      }
+    ]
+  },
+  "1744733208": {
+    "feedback": {
+      "1": "positive",
+      "3": "positive"
+    },
+    "messages": [
+      {
+        "role": "human",
+        "content": "Hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! How can I assist you today?"
+      },
+      {
+        "role": "human",
+        "content": "write a python code for checking prime number"
+      },
+      {
+        "role": "ai",
+        "content": "Certainly! To check if a number is a prime number in Python, you can use the following code:\n\n```python\ndef is_prime(n):\n    \"\"\"Check if a number is a prime number.\"\"\"\n    if n <= 1:\n        return False\n    if n <= 3:\n        return True\n    if n % 2 == 0 or n % 3 == 0:\n        return False\n    i = 5\n    while i * i <= n:\n        if n % i == 0 or n % (i + 2) == 0:\n            return False\n        i += 6\n    return True\n\n# Example usage:\nnumber = 29\nif is_prime(number):\n    print(f\"{number} is a prime number.\")\nelse:\n    print(f\"{number} is not a prime number.\")\n```\n\n### Explanation:\n- **Numbers less than or equal to 1** are not prime numbers.\n- **Numbers 2 and 3** are prime numbers.\n- Any other number divisible by 2 or 3 is not a prime.\n- For numbers greater than 3, the code checks divisibility starting from 5 and increments by 6 (i.e., checks 5, 11, 17, etc.), since a prime number is not divisible by any number other than 1 and itself.\n- The loop runs while `i * i` is less than or equal to `n` to reduce the number of operations, utilizing the fact that a larger factor of `n` must be a multiple of a smaller factor that has been already checked."
+      }
+    ]
+  },
+  "1744744287": {
+    "feedback": {
+      "1": "negative"
+    },
+    "messages": [
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! How can I assist you today?"
+      }
+    ]
+  }
+}
