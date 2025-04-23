@@ -44,20 +44,35 @@ To improve agent performance, the system uses **Reinforcement Learning with Huma
 ├── app.py
 ├── app_ab.py
 ├── graph.py
-├── models
-│   ├── generator_reward_model.pth
-│   ├── student_cot_model.pt
-│   ├── student_debugger_model.pt
-│   ├── student_explainer_model.pt
-│   └── student_generator_model.pt
-└── structure.txt
 
 5 directories, 35 files
 ```
 ## File Descriptions
-File/Folder | Description
-app.py | Launches the Streamlit feedback interface for scalar feedback.
-app_ab.py | Launches the Streamlit UI for preference-based feedback between models.
-graph.py | Manages the planner agent and the data flow between specialized agents.
-CodeCraftModels.ipynb | Notebook that documents and demonstrates how the multi-agent models work together.
-README.md | Project overview, setup instructions, and documentation.
+```
+| File      | Description                                                               |
+| --------- | ------------------------------------------------------------------------- |
+| app.py    | Scalar feedback UI via Streamlit                                          |
+| app_ab.py | Preference based feedback UI via Streamlit                                |
+| graph.py  | Implements planner logic for routing prompts and responses between agents |
+```
+
+## /RLHF
+| File                                | Description                                                         |
+| ----------------------------------- | ------------------------------------------------------------------- |
+| Reward_Dataset_RLAIF_criteria.ipynb | Implements code for dataset generation using RLAIF                  |
+| Reward_dataset_with_testcases.ipynb | Implements code for dataset generation using testcases              |
+| json_reader.py                      | Implements code for reading and filtering json data                 |
+| policy_triner.py                    | Implements code for retraining the agents using collected feedback  |
+| ppo_trainer.py                      | Implements code for PPO training loop                               |
+| reward_model_trainer.py             | Implements code for updating reward models using collected feedback |
+
+## /RLHF/data
+| File                     | Description                              |
+| ------------------------ | ---------------------------------------- |
+| generator_rewards.jsonl  | Data generated for training reward model |
+| preference_feedback.json | Sample preference feedback               |
+| scalar_ffedback.json     | Sample scalar feedback                   |
+
+## Agents
+All the agents and models that are trained for the project are in the following drive:
+https://drive.google.com/drive/folders/1QA9JWC1a-KPyhpRmJi-rjkaCYp6hTqgz?usp=share_link
